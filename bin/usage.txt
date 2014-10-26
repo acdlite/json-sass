@@ -1,0 +1,5 @@
+usage: json-sass {OPTIONS}
+
+  -i, --infile   Read input from a file. Default: "-" (stdin)
+  -o, --outfile  Write output to a file. Default: "-" (stdout)
+  -h, --help     Show this message.

@@ -13,7 +13,9 @@
   "author": "Andrew Clark <acdlite@me.com>",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^2.4.1"
+    "lodash": "^2.4.1",
+    "minimist": "^1.1.0",
+    "through2": "^0.6.3"
   },
   "devDependencies": {
     "chai": "^1.9.2",
