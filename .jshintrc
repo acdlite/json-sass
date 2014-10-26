@@ -1,0 +1,9 @@
+{
+  "indent": 2,
+  "globalstrict": true,
+  "newcap": false,
+
+  "node": true,
+
+  "unused": "vars",
+}
