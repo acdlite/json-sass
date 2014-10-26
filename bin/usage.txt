@@ -2,4 +2,6 @@ usage: json-sass {OPTIONS}
 
   -i, --infile   Read input from a file. Default: "-" (stdin)
   -o, --outfile  Write output to a file. Default: "-" (stdout)
+  -p, --prefix   Add some text to the beginning.
+  -s, --suffix   Add some text to the end. Default: ";"
   -h, --help     Show this message.

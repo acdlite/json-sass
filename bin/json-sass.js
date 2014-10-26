@@ -6,7 +6,13 @@ var path = require('path');
 var minimist = require('minimist');
 
 var argv = minimist(process.argv.slice(2), {
-    alias: { i: 'infile', o: 'outfile', h: 'help' },
+    alias: {
+      i: 'infile',
+      o: 'outfile',
+      h: 'help',
+      p: 'prefix',
+      s: 'suffix',
+    },
     default: { i: '-', o: '-' }
 });
 
@@ -20,7 +26,12 @@ var output = argv.outfile === '-'
   ? process.stdout
   : fs.createWriteStream(argv.outfile);
 
-input.pipe(jsonSass()).pipe(output);
+var opts = {};
+
+if (argv.prefix) opts.prefix = argv.prefix;
+if (argv.suffix) opts.suffix = argv.suffix;
+
+input.pipe(jsonSass(opts)).pipe(output);
 
 function showHelp(code) {
   var r = fs.createReadStream(path.join(__dirname, 'usage.txt'));
