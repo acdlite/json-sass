@@ -60,7 +60,7 @@ fs.createReadStream('theme.json')
   .pipe(jsonSass({
     prefix: '$theme: ',
   }))
-  .pipe(fs.createWriteStream('_theme.scss'));
+  .pipe(fs.createWriteStream('theme.scss'));
 ```
 
 Or with gulp using [vinyl-source-stream](https://github.com/hughsk/vinyl-source-stream):
