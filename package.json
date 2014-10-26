@@ -1,6 +1,6 @@
 {
   "name": "json-sass",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Streamy module that transforms a JSON stream into scss syntax Sass.",
   "main": "index.js",
   "scripts": {
