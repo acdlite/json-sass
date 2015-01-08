@@ -1,7 +1,7 @@
 'use strict';
 
-var expect = require('chai').expect;
-var jsToSassString = require('../lib/js-to-sass-string');
+import { expect } from 'chai';
+import jsToSassString from '../jsToSassString';
 
 function Foo() {
   this.toString = function() {

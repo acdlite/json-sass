@@ -1,0 +1,62 @@
+#!/usr/bin/env node
+
+'use strict';
+
+let jsonSass = require('../jsonSass');
+let fs = require('fs');
+let path = require('path');
+let minimist = require('minimist');
+import { Readable } from 'stream';
+
+let argv = minimist(process.argv.slice(2), {
+    alias: {
+      i: 'infile',
+      o: 'outfile',
+      h: 'help',
+      p: 'prefix',
+      s: 'suffix',
+    },
+    default: { i: '-', o: '-' }
+});
+
+if (argv.help) return showHelp(0);
+
+let input = argv.infile === '-'
+  ? process.stdin
+  : fs.createReadStream(argv.infile);
+
+let input;
+if (argv.infile === '-') {
+  input = process.stdin;
+} else {
+  if (path.extname(argv.infile) === '.js') {
+    input = new Readable();
+
+    let jsModule = require(path.join(process.cwd(), argv.infile));
+    let jsonString = JSON.stringify(jsModule);
+
+    input.push(jsonString);
+    input.push(null);
+  } else {
+    input = fs.createReadStream(argv.infile);
+  }
+}
+
+let output = argv.outfile === '-'
+  ? process.stdout
+  : fs.createWriteStream(argv.outfile);
+
+let opts = {};
+
+if (argv.prefix) opts.prefix = argv.prefix;
+if (argv.suffix) opts.suffix = argv.suffix;
+
+input.pipe(jsonSass(opts)).pipe(output);
+
+function showHelp(code) {
+  let r = fs.createReadStream(path.join(__dirname, '../../usage.txt'));
+  r.on('end', function () {
+    if (code) process.exit(code);
+  });
+  r.pipe(process.stdout);
+}

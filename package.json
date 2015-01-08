@@ -1,24 +1,28 @@
 {
   "name": "json-sass",
   "version": "1.2.1",
-  "description": "Streamy module that transforms a JSON stream into scss syntax Sass.",
-  "main": "index.js",
+  "description": "Transform JSON into scss syntax Sass.",
+  "main": "lib/jsonSass.js",
+  "bin": "lib/bin/json-sass",
   "scripts": {
-    "test": "mocha"
+    "test": "make test",
+    "prepublish": "npm test"
   },
   "keywords": [
     "sass",
     "JSON"
   ],
   "author": "Andrew Clark <acdlite@me.com>",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
-    "lodash": "^2.4.1",
-    "minimist": "^1.1.0",
-    "through2": "^0.6.3"
+    "lodash": "~2.4.1",
+    "lodash-node": "~2.4.1",
+    "minimist": "~1.1.0",
+    "through2": "~0.6.3"
   },
   "devDependencies": {
-    "chai": "^1.9.2",
-    "mocha": "^2.0.1"
+    "6to5": "~2.7.4",
+    "chai": "~1.9.2",
+    "mocha": "~2.0.1"
   }
 }
