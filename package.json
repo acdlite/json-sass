@@ -1,6 +1,6 @@
 {
   "name": "json-sass",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "Transform JSON into scss syntax Sass.",
   "main": "lib/jsonSass.js",
   "bin": "lib/bin/json-sass",
