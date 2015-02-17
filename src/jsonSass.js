@@ -21,5 +21,6 @@ function jsonSass(options) {
   });
 }
 
+module.exports = jsonSass;
 export default jsonSass;
 export { jsToSassString as convertJs };
