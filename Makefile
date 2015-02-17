@@ -1,4 +1,4 @@
-6TO5_CMD=./node_modules/.bin/6to5
+BABEL_CMD=./node_modules/.bin/babel
 MOCHA_CMD=./node_modules/.bin/mocha
 
 SRC_JS = $(shell find src -name "*.js")
@@ -12,10 +12,10 @@ test: build
 js: $(LIB_JS) lib/bin/json-sass
 
 $(LIB_JS): lib/%.js: src/%.js
-	mkdir -p $(dir $@) && $(6TO5_CMD) $< -o $@ --experimental
+	mkdir -p $(dir $@) && $(BABEL_CMD) $< -o $@ --experimental
 
 lib/bin/json-sass:
-	mkdir -p $(dir $@) && $(6TO5_CMD) src/bin/json-sass -o $@ --experimental
+	mkdir -p $(dir $@) && $(BABEL_CMD) src/bin/json-sass -o $@ --experimental
 
 clean:
 	rm -rf lib/

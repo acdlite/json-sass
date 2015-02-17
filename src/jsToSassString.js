@@ -22,7 +22,7 @@ function jsToSassString(value) {
           let jsObj = value;
           let sassKeyValPairs = [];
 
-          let sassKeyValPairs = Object.keys(jsObj)
+          sassKeyValPairs = Object.keys(jsObj)
             .reduce((result, key) => {
               let jsVal = jsObj[key];
               let sassVal = _jsToSassString(jsVal, indentLevel);

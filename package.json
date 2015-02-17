@@ -15,13 +15,13 @@
   "author": "Andrew Clark <acdlite@me.com>",
   "license": "ISC",
   "dependencies": {
+    "babel": "~4.1.0",
     "lodash": "~2.4.1",
     "lodash-node": "~2.4.1",
     "minimist": "~1.1.0",
     "through2": "~0.6.3"
   },
   "devDependencies": {
-    "6to5": "~2.7.4",
     "chai": "~1.9.2",
     "mocha": "~2.0.1"
   }

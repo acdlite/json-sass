@@ -21,10 +21,6 @@ let argv = minimist(process.argv.slice(2), {
 
 if (argv.help) return showHelp(0);
 
-let input = argv.infile === '-'
-  ? process.stdin
-  : fs.createReadStream(argv.infile);
-
 let input;
 if (argv.infile === '-') {
   input = process.stdin;
