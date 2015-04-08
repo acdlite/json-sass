@@ -1,6 +1,5 @@
 'use strict';
 
-import 'babel/polyfill';
 import through from 'through2';
 import jsToSassString from './jsToSassString';
 
