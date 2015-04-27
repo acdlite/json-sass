@@ -2,6 +2,7 @@
 
 import through from 'through2';
 import jsToSassString from './jsToSassString';
+import assign from 'object-assign';
 
 let DEFAULTS = {
   prefix: '',
@@ -9,7 +10,7 @@ let DEFAULTS = {
 };
 
 function jsonSass(options) {
-  let options = Object.assign({}, DEFAULTS, options);
+  let options = assign({}, DEFAULTS, options);
 
   return through(function(chunk, enc, callback) {
     let jsValue = JSON.parse(chunk);
