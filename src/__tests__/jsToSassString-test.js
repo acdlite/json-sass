@@ -13,7 +13,7 @@ var foo = new Foo();
 
 describe('JS to Sass', function() {
   it('should handle strings', function() {
-    expect(jsToSassString('foo')).to.equal('foo');
+    expect(jsToSassString('foo')).to.equal('"foo"');
   });
 
   it('should handle booleans', function() {
@@ -49,6 +49,6 @@ describe('JS to Sass', function() {
       },
     };
 
-    expect(jsToSassString(obj)).to.equal('(\n  foo: bar,\n  bar: (\n    baz: foo\n  )\n)')
+    expect(jsToSassString(obj)).to.equal('(\n  "foo": "bar",\n  "bar": (\n    "baz": "foo"\n  )\n)')
   })
 });

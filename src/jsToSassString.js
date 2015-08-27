@@ -13,7 +13,7 @@ function jsToSassString(value) {
       case 'number':
         return value.toString();
       case 'string':
-        return value;
+        return `"${value}"`;
       case 'object':
         if (isPlainObject(value)) {
           indentLevel += 1;
@@ -28,7 +28,7 @@ function jsToSassString(value) {
               let sassVal = _jsToSassString(jsVal, indentLevel);
 
               if (isNotUndefined(sassVal)) {
-                result.push(`${key}: ${sassVal}`);
+                result.push(`"${key}": ${sassVal}`);
               }
 
               return result;
