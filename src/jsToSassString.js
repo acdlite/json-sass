@@ -39,10 +39,10 @@ function jsToSassString(value) {
           return result;
         }
         else if (isArray(value)) {
-          let sassVals = [
-            for (v of value) if (isNotUndefined(v))
-              _jsToSassString(v, indentLevel)
-          ];
+          let sassVals = value.map((v) => isNotUndefined(v) ?
+					  _jsToSassString(v, indentLevel) :
+					  null)
+			      .filter((v) => v !== null);
 
           return '(' + sassVals.join(', ') + ')';
         }
