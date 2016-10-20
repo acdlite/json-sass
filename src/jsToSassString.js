@@ -26,9 +26,12 @@ function jsToSassString(value) {
             .reduce((result, key) => {
               let jsVal = jsObj[key];
               let sassVal = _jsToSassString(jsVal, indentLevel);
+                
+            if(sassVal.indexOf(",") > -1 && sassVal.indexOf("(") != 0) {
+                sassVal = '"' + sassVal + '"';
 
               if (isNotUndefined(sassVal)) {
-                result.push(`${key}: ${sassVal}`);
+                result.push(`+ '"' + ${key} + '"' + : ${sassVal}`);
               }
 
               return result;
