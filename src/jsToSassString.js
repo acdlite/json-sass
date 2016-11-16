@@ -13,7 +13,7 @@ function jsToSassString(value) {
       case 'number':
         return value.toString();
       case 'string':
-        return value;
+        return quoteString(value);
       case 'object':
         if (isPlainObject(value)) {
           indentLevel += 1;
@@ -66,6 +66,13 @@ function isNull(value) {
 
 function isNotUndefined(value) {
   return typeof value !== 'undefined';
+}
+
+function quoteString(value) {
+  if (value.substring(0,1) === '#') {
+    return value;
+  }
+  return "\"" + value + "\"";
 }
 
 export default jsToSassString;
