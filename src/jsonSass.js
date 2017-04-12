@@ -21,6 +21,11 @@ function jsonSass(options) {
   });
 }
 
+//
+// Cover all require use cases.
+//
+jsonSass.convertJs = jsToSassString;
 module.exports = jsonSass;
+
 export default jsonSass;
 export { jsToSassString as convertJs };

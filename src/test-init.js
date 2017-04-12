@@ -1,4 +1,3 @@
-import 'babel/polyfill';
+require('babel-polyfill');
 
-import { expect } from 'chai';
-global.expect = expect;
+global.expect = require('chai').expect;
