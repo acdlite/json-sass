@@ -41,7 +41,7 @@ function jsToSassString(value) {
         else if (isArray(value)) {
           const sassVals = value.map(v => {
             if (isNotUndefined(v)) {
-              _jsToSassString(v, indentLevel)
+              return _jsToSassString(v, indentLevel)
             }
           }).filter(Boolean);
 
