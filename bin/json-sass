@@ -6,17 +6,17 @@ let jsonSass = require('../jsonSass');
 let fs = require('fs');
 let path = require('path');
 let minimist = require('minimist');
-import { Readable } from 'stream';
+let Readable = require('stream').Readable;
 
 let argv = minimist(process.argv.slice(2), {
-    alias: {
-      i: 'infile',
-      o: 'outfile',
-      h: 'help',
-      p: 'prefix',
-      s: 'suffix',
-    },
-    default: { i: '-', o: '-' }
+  alias: {
+    i: 'infile',
+    o: 'outfile',
+    h: 'help',
+    p: 'prefix',
+    s: 'suffix',
+  },
+  default: { i: '-', o: '-' }
 });
 
 if (argv.help) return showHelp(0);
