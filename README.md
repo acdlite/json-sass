@@ -23,7 +23,7 @@ Example source file `theme.json`:
   "array": [1, 2, 3],
   "object": {
     "foo": "bar"
-  }
+  },
   "null": null
 }
 
