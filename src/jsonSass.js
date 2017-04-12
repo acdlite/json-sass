@@ -9,8 +9,8 @@ let DEFAULTS = {
   suffix: ';',
 };
 
-function jsonSass(options) {
-  let options = assign({}, DEFAULTS, options);
+function jsonSass(opts) {
+  const options = assign({}, DEFAULTS, opts);
 
   return through(function(chunk, enc, callback) {
     let jsValue;
